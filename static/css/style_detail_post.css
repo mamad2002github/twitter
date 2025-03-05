@@ -1,0 +1,57 @@
+.post-container {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.post-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.post-meta {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.post-content {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.post-stats {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.post-actions .btn {
+    margin-right: 10px;
+}
+
+.comments-section {
+    margin-top: 30px;
+}
+
+.comments-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.comment-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.comment-date {
+    font-size: 12px;
+    color: #999;
+}
+
+.no-comments {
+    font-size: 14px;
+    color: #555;
+}

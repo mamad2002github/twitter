@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load humanreadble %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card mb-4">
+        <div class="card-body">
+            <h2 class="card-title">{{ title }}</h2>
+            <p class="text-muted">
+                <small>{{ post.created_at | human_readable_date }} By <strong>{{ post.author.username }}</strong></small>
+            </p>
+            <p class="card-text">{{ post.content }}</p>
+            <div class="d-flex justify-content-between">
+                <span>{{ post.like_count }} Like</span>
+                <span>{{ post.comment_count }} Comment</span>
+            </div>
+            <div class="mt-3">
+                <a href="{% url 'Add_comments' post.pk %}" class="btn btn-primary"> Add comment</a>
+                <a href="{% url 'post_list' %}" class="btn btn-secondary"> Back</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="comments-section">
+        <h3>Comments</h3>
+        <ul class="list-group">
+            {% for comment in comments %}
+                <li class="list-group-item">
+                    <p>
+                        <strong>{{ comment.author.username }}</strong>: {{ comment.text }}
+                    </p>
+                    <small class="text-muted">{{ comment.created_at }}</small>
+                </li>
+            {% empty %}
+                <li class="list-group-item"> Not comment yet</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

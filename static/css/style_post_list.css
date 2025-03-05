@@ -1,0 +1,139 @@
+/* متغیرهای CSS */
+:root {
+    --primary-color: #1da1f2;
+    --bg-color: #e6ecf0;
+    --text-color: #14171a;
+    --muted-color: #657786;
+    --light-bg: #f5f8fa;
+    --border-color: #e1e8ed;
+    --border-radius: 20px;
+    --transition-duration: 0.2s;
+}
+
+/* Reset سبک‌ها */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* سبک کلی بدنه */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* استایل کانتینر اصلی */
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+/* عناوین */
+h1,
+h2 {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* استایل لیست پست‌ها */
+ul.list-group {
+    list-style: none;
+    padding: 0;
+}
+
+.list-group-item {
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px;
+    transition: background-color var(--transition-duration) ease;
+}
+
+.list-group-item:last-child {
+    border-bottom: none;
+}
+
+.list-group-item:hover {
+    background-color: var(--light-bg);
+}
+
+/* استایل متون کم‌رنگ */
+.text-muted {
+    color: var(--muted-color);
+    font-size: 0.9em;
+}
+
+/* استایل دکمه‌ها */
+.btn {
+    padding: 5px 10px;
+    font-size: 0.9em;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    background: #ffffff;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: background-color var(--transition-duration) ease, color var(--transition-duration) ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+/* استایل لینک‌ها */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* استایل فرم‌های لایک */
+form {
+    display: inline;
+    margin-right: 10px;
+}
+
+/* استایل دکمه لایک شده */
+.btn.liked {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: 1px solid var(--primary-color);
+}
+
+/* استایل صفحه‌بندی */
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pagination a,
+.pagination span.current {
+    padding: 8px 12px;
+    margin: 0 5px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: background-color var(--transition-duration) ease, color var(--transition-duration) ease;
+}
+
+.pagination a:hover {
+    background-color: var(--light-bg);
+}
+
+.pagination span.current {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}

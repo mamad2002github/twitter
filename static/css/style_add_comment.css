@@ -1,0 +1,71 @@
+/* استایل کلی فرم کامنت */
+.comment-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* استایل برچسب‌ها (labels) */
+.comment-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    align-self: flex-start; /* تراز برچسب به ابتدای کانتینر فلکس */
+}
+
+/* استایل فیلد متن (textarea) */
+.comment-form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+/* استایل دکمه ارسال */
+.comment-form .submit-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    align-self: flex-start;
+}
+
+.comment-form .submit-button:hover {
+    background-color: #0056b3;
+}
+
+/* استایل دکمه بازگشت */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 15px;
+    margin-top: 20px;
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.back-link:hover {
+    background-color: #e0e0e0;
+}
+
+.back-link::before {
+    content: "←";
+    margin-right: 8px;
+}
+
+/* استایل پاراگراف‌های فرم (p) */
+.comment-form p {
+    margin-bottom: 15px;
+}

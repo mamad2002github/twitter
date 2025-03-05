@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style_post_list.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style_detail_post.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style_add_comment.css' %}">
+</head>
+<body>
+{% block content %} 
+{% endblock %}
+</body>
+</html>

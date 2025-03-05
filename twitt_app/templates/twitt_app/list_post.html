@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load humanreadble %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="container my-4">
+    <h2 class="mb-3">{{ title }}</h2>
+    <p class="lead">{{ welcome }}</p>
+    <ul class="list-group">
+        {% for post in posts %}
+            <li class="list-group-item mb-3">
+                <p class="text-muted mb-1">
+                    ({{ post.created_at|human_readable_date }})
+                    <strong>{{ post.author.username }}</strong>:
+                </p>
+                <p class="mb-2">{{ post.text }}</p>
+                <div class="d-flex align-items-center">
+                    <!-- فرم لایک -->
+                    <form action="{% url 'like_post' post.pk %}" method="post" class="mr-2">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-sm btn-outline-primary">Like</button>
+                    </form>
+                    <span class="mr-2">– {{ post.like_count }} Likes – {{ post.comment_count }} Comments –</span>
+                    <a href="{% url 'post_comments' post.pk %}" class="mr-2">View Comments</a>
+                    <a href="{% url 'Add_comments' post.pk %}">Add Comment</a>
+                </div>
+            </li>
+        {% empty %}
+            <li class="list-group-item">No posts to show</li>
+        {% endfor %}
+    </ul>
+</div>
+
+    <div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+{% endblock %}
